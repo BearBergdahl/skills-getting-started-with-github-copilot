@@ -107,6 +107,6 @@ def signup_for_activity(activity_name: str, email: str):
         raise HTTPException(status_code=400, detail="Student already signed up")
     # Validate max participants not exceeded
     if len(activity["participants"]) >= activity["max_participants"]:
-        raise HTTPException(status_code=400, detail="Maximum participants reached")  
+        raise HTTPException(status_code=400, detail="Maximum participants reached")
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
